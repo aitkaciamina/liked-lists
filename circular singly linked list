@@ -1,0 +1,53 @@
+// circular linked list
+#include<iostream>
+using namespace std;
+
+
+class Node
+{
+  int data;
+  Node *next;
+}
+
+class Circular_list
+{
+private:
+  Node * head;
+public:
+  Circular_list ()
+  {
+    head = NULL;
+  }
+  void insert_data (int n)
+  {
+            Node* ptr = head;
+            Node* new_n = new Node;
+            new_n->data=data;
+            new_n->next=head;
+    if (head == NULL)
+      new_n->next = new_n;
+    else
+      {
+          while(ptr->next!=NULL)
+          {
+              ptr=ptr->next;
+              ptr->next=new_n;
+          }
+      }
+
+
+  }
+  void display()
+  {
+      Node* ptr = head;
+      do{
+          cout<<ptr->next;
+          ptr=ptr->next;
+      }while(ptr->next!=head);
+  }
+}
+
+int main ()
+{
+
+}
